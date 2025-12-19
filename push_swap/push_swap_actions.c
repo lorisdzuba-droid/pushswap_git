@@ -6,7 +6,7 @@
 /*   By: ldzuba <ldzuba@student.42belgium.be>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/17 13:04:45 by ldzuba            #+#    #+#             */
-/*   Updated: 2025/12/17 15:04:11 by ldzuba           ###   ########.fr       */
+/*   Updated: 2025/12/19 17:32:55 by ldzuba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,8 +48,14 @@ void	ft_push_b(t_stack *stacks)
 	tmp_a = stacks->head_a;
 	tmp_b = stacks->head_b;
 	stacks->head_a = tmp_a->next;
+	if (stacks->head_a)
+		stacks->head_a->prev = NULL;
+	else
+		stacks->tail_a = NULL;
+	tmp_a->next = tmp_b;
+	if (tmp_b)
+		tmp_b->prev = tmp_a;
 	stacks->head_b = tmp_a;
-	stacks->head_b->next = tmp_b;
 	stacks->size_a--;
 	stacks->size_b++;
 	if (stacks->size_b == 1)
@@ -67,9 +73,17 @@ void	ft_push_a(t_stack *stacks)
 	tmp_a = stacks->head_a;
 	tmp_b = stacks->head_b;
 	stacks->head_b = tmp_b->next;
+	if (stacks->head_b)
+		stacks->head_b->prev = NULL;
+	else
+		stacks->tail_b = NULL;
+	tmp_b->next = tmp_a;
+	if (tmp_a)
+		tmp_a->prev = tmp_b;
 	stacks->head_a = tmp_b;
-	stacks->head_a->next = tmp_a;
 	stacks->size_b--;
 	stacks->size_a++;
+	if (stacks->size_a == 1)
+		stacks->tail_a = tmp_b;
 	ft_putendl_fd("pa", 1);
 }

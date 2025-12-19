@@ -6,7 +6,7 @@
 /*   By: ldzuba <ldzuba@student.42belgium.be>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 13:49:23 by ldzuba            #+#    #+#             */
-/*   Updated: 2025/12/17 15:40:59 by ldzuba           ###   ########.fr       */
+/*   Updated: 2025/12/19 17:15:23 by ldzuba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,4 +50,14 @@ void	ft_swap_b(t_stack *stacks);
 void	ft_rotate_a(t_stack *stacks);
 void	ft_rotate_b(t_stack *stacks);
 void	ft_rotate_rr(t_stack *stacks);
+int		ft_is_sorted(t_stack *stacks);
+void	ft_rev_rot_a(t_stack *stacks);
+void	ft_rev_rot_b(t_stack *stacks);
+void	ft_rev_rot_rrr(t_stack *stacks);
+int		ft_find_index(t_stack *stacks, int val);
+void	ft_index(t_stack *stacks);
+void	ft_small_sort(t_stack *stacks);
+int		get_distance(t_stack *stacks, int index);
+int		get_min(t_stack *stacks, int val);
+int		ft_is_sorted(t_stack *stacks);
 #endif
