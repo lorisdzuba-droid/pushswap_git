@@ -1,61 +1,62 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap_index.c                                  :+:      :+:    :+:   */
+/*   push_swap_sortbig.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldzuba <ldzuba@student.42belgium.be>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/19 15:18:36 by ldzuba            #+#    #+#             */
-/*   Updated: 2025/12/22 14:14:42 by ldzuba           ###   ########.fr       */
+/*   Created: 2025/12/22 13:14:24 by ldzuba            #+#    #+#             */
+/*   Updated: 2025/12/22 13:58:33 by ldzuba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_find_index(t_stack *stacks, int val)
+int	ft_max(t_stack *stacks)
 {
-	ssize_t	index;
 	t_val	*tmp;
+	int		max;
+	int		bits;
 
-	index = 0;
 	tmp = stacks->head_a;
+	max = tmp->index;
+	bits = 0;
 	while (tmp)
 	{
-		if (tmp->value < val)
-			index++;
+		if (tmp->index > max)
+			max = tmp->index;
 		tmp = tmp->next;
 	}
-	return (index);
+	while ((max >> bits) != 0)
+		bits++;
+	return (bits);
 }
 
-void	ft_index(t_stack *stacks)
-{
-	int		val;
-	t_val	*tmp;
-
-	tmp = stacks->head_a;
-	if (!tmp->next)
-		return ;
-	while (tmp)
-	{
-		val = tmp->value;
-		tmp->index = ft_find_index(stacks, val);
-		tmp = tmp->next;
-	}
-}
-
-int	get_min(t_stack *stacks, int val)
+void	ft_big_sort(t_stack	*stacks)
 {
 	t_val	*tmp;
-	int		min;
+	int		i;
+	int		j;
+	int		size;
+	int		max;
 
+	i = 0;
 	tmp = stacks->head_a;
-	min = tmp->index;
-	while (tmp->next)
+	max = ft_max(stacks);
+	size = stacks->size_a;
+	while (i < max)
 	{
-		tmp = tmp->next;
-		if ((tmp->index < min) && tmp->index != val)
-			min = tmp->index;
+		j = 0;
+		while (j++ < size)
+		{
+			tmp = stacks->head_a;
+			if (((tmp->index >> i) & 1) == 1)
+				ft_rotate_a(stacks);
+			else
+				ft_push_b(stacks);
+		}
+		while (stacks->size_b != 0)
+			ft_push_a(stacks);
+		i++;
 	}
-	return (min);
 }
