@@ -6,7 +6,7 @@
 /*   By: ldzuba <ldzuba@student.42belgium.be>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 13:49:23 by ldzuba            #+#    #+#             */
-/*   Updated: 2025/12/23 13:22:59 by ldzuba           ###   ########.fr       */
+/*   Updated: 2025/12/23 15:59:53 by ldzuba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void	ft_checkargs(int argc, char **argv);
 char	**ft_split(char const *s, char c);
 void	ft_free_stack(t_stack **sta);
 void	ft_free(char **str);
-void	ft_error(char *str);
+void	ft_error(char *str, int argc, char **argv);
 void	free_split(char **str);
 void	ft_swap_a(t_stack *stacks);
 void	ft_push_b(t_stack *stacks);
