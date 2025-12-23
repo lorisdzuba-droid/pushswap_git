@@ -6,7 +6,7 @@
 /*   By: ldzuba <ldzuba@student.42belgium.be>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 13:49:23 by ldzuba            #+#    #+#             */
-/*   Updated: 2025/12/22 13:25:51 by ldzuba           ###   ########.fr       */
+/*   Updated: 2025/12/23 13:22:59 by ldzuba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,4 +61,5 @@ int		get_distance(t_stack *stacks, int index);
 int		get_min(t_stack *stacks, int val);
 int		ft_is_sorted(t_stack *stacks);
 void	ft_big_sort(t_stack	*stacks);
+void	ft_swap_ab(t_stack *stacks);
 #endif

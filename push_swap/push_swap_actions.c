@@ -6,7 +6,7 @@
 /*   By: ldzuba <ldzuba@student.42belgium.be>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/17 13:04:45 by ldzuba            #+#    #+#             */
-/*   Updated: 2025/12/22 13:03:22 by ldzuba           ###   ########.fr       */
+/*   Updated: 2025/12/23 13:10:16 by ldzuba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,35 @@ void	ft_swap_b(t_stack *stacks)
 	if (stacks->size_b == 2)
 		stacks->tail_b = tmp;
 	ft_putendl_fd("sb", 1);
+}
+
+void	ft_swap_ab(t_stack *stacks)
+{
+	t_val	*tmp;
+
+	if (stacks->size_a < 2 || stacks->size_b < 2)
+		return ;
+	tmp = stacks->head_a;
+	stacks->head_a = tmp ->next;
+	tmp->prev = stacks->head_a;
+	tmp->next = stacks->head_a->next;
+	if (tmp->next)
+		tmp->next->prev = tmp;
+	stacks->head_a->next = tmp;
+	stacks->head_a->prev = NULL;
+	if (stacks->size_a == 2)
+		stacks->tail_a = tmp;
+	tmp = stacks->head_b;
+	stacks->head_b = tmp ->next;
+	tmp->prev = stacks->head_b;
+	tmp->next = stacks->head_b->next;
+	if (tmp->next)
+		tmp->next->prev = tmp;
+	stacks->head_b->next = tmp;
+	stacks->head_b->prev = NULL;
+	if (stacks->size_b == 2)
+		stacks->tail_b = tmp;
+	ft_putendl_fd("ss", 1);
 }
 
 void	ft_push_b(t_stack *stacks)

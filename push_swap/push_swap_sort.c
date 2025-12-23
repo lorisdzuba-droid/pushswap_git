@@ -6,7 +6,7 @@
 /*   By: ldzuba <ldzuba@student.42belgium.be>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/19 12:33:50 by ldzuba            #+#    #+#             */
-/*   Updated: 2025/12/19 17:16:22 by ldzuba           ###   ########.fr       */
+/*   Updated: 2025/12/23 14:16:02 by ldzuba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ void	sort_three(t_stack *stacks)
 	else if (first < second && second > third)
 	{
 		ft_swap_a(stacks);
-		ft_rev_rot_a(stacks);
+		ft_rotate_a(stacks);
 	}
 }
 

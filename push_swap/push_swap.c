@@ -6,7 +6,7 @@
 /*   By: ldzuba <ldzuba@student.42belgium.be>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/11 16:19:53 by ldzuba            #+#    #+#             */
-/*   Updated: 2025/12/22 14:00:42 by ldzuba           ###   ########.fr       */
+/*   Updated: 2025/12/23 13:17:31 by ldzuba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,80 +92,14 @@ int	main(int argc, char **argv)
 	stacks = ft_createstack(argc, argv);
 	if (!stacks)
 		ft_error("Error");
-// if (ft_is_sorted(stacks))
-// {
-	// t_val	*tmp;
-// 	ft_rev_rot_a(stacks);
-// 	ft_push_b(stacks);
-// 	ft_push_b(stacks);
-// 	ft_push_b(stacks);
-// 	ft_push_b(stacks);
-// 	ft_push_b(stacks);
-// 	ft_push_b(stacks);
-// 	ft_push_b(stacks);
-// 	ft_push_b(stacks);
-// 	ft_push_b(stacks);
-// 	ft_push_a(stacks);
-// 	ft_push_a(stacks);
-// 	ft_push_a(stacks);
-// 	ft_rotate_b(stacks);
-// 	ft_rotate_b(stacks);
-// 	ft_rotate_b(stacks);
-// 	ft_rotate_rr(stacks);
-// 	ft_rotate_rr(stacks);
-// 	ft_rotate_rr(stacks);
-// 	ft_rev_rot_b(stacks);
-// 	ft_rev_rot_b(stacks);
-// 	ft_rev_rot_b(stacks);
-// 	ft_rev_rot_b(stacks);
-// 	ft_rev_rot_b(stacks);
-// 	ft_rev_rot_a(stacks);
-// 	ft_rev_rot_a(stacks);
-// 	ft_rev_rot_a(stacks);
-// 	ft_rev_rot_rrr(stacks);
-// 	ft_rev_rot_rrr(stacks);
-// 	ft_rev_rot_rrr(stacks);
-// 	ft_rev_rot_rrr(stacks);
-// 	ft_push_b(stacks);
-// 	ft_push_b(stacks);
-// 	ft_push_b(stacks);
-// 	ft_push_b(stacks);
-// 	ft_push_b(stacks);
-// 	ft_push_b(stacks);
-// 	ft_push_b(stacks);
-// 	ft_push_b(stacks);
-// 	ft_push_b(stacks);
-// 	ft_push_a(stacks);
-// 	ft_push_a(stacks);
-// 	ft_push_a(stacks);
-// 	ft_swap_a(stacks);
-// 	ft_swap_a(stacks);
-// 	ft_swap_a(stacks);
-// 	ft_swap_a(stacks);
-// 	ft_swap_a(stacks);
-// 	ft_swap_b(stacks);
-// 	ft_swap_b(stacks);
-// 	ft_swap_b(stacks);
-// 	ft_swap_b(stacks);
+	if (ft_is_sorted(stacks))
+	{
+		ft_free_stack(&stacks);
+		if (argc == 2)
+			free_split (argv);
+		return (0);
+	}
 	ft_sort(stacks);
-	// ft_swap_a(stacks);
-	// // ft_rotate_a(stacks);
-	// ft_rev_rot_a(stacks);
-	// tmp = stacks->head_a;
-	// while (tmp)
-	// {
-	// 	printf("%d%d\n", tmp->value, tmp->index);
-	// 	tmp = tmp->next;
-	// }
-	// printf("size_a=%d\n", stacks->size_a);
-	// ft_putendl_fd("\n\n", 1);
-	// tmp = stacks->head_b;
-	// while (tmp)
-	// {
-	// 	printf("%d\n", tmp->value);
-	// 	tmp = tmp->next;
-	// }
-	// printf("size_b=%d\n", stacks->size_b);
 	ft_free_stack(&stacks);
 	if (argc == 2)
 		free_split (argv);
