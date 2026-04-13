@@ -6,7 +6,7 @@
 /*   By: ldzuba <ldzuba@student.42belgium.be>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/11 16:19:53 by ldzuba            #+#    #+#             */
-/*   Updated: 2025/12/23 16:20:54 by ldzuba           ###   ########.fr       */
+/*   Updated: 2025/12/29 12:44:02 by ldzuba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,7 @@ int	main(int argc, char **argv)
 	ft_checkargs(argc, argv);
 	stacks = ft_createstack(argc, argv);
 	if (!stacks)
-		ft_error("Error" ,argc, argv);
+		ft_error("Error", argc, argv);
 	if (ft_is_sorted(stacks))
 	{
 		ft_free_stack(&stacks);
